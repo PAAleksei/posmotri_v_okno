@@ -222,11 +222,11 @@ ol {
 
 .search-form__checkbox[type='checkbox']:checked + .search-form__pseudo-checkbox::before {
   content: '';
-  position: absolute;
-  inset: 1.5px;
+  display: block;
   width: 15px;
   height: 15px;
   background-color: #FFF;
+  margin: 1px;
 }
 
 .search-form__pseudo-checkbox:focus-visible {
