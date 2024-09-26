@@ -1,5 +1,1 @@
-#posmotri_v_okno
-Вторая проектная работа. 
-В этом проекте тренируется очень важный навык верстальщика — работа с частично готовым модулем. Стилизация готового плагина.
-
-[https://github.com/PAAleksei/posmotri_v_okno.git]
+https://github.com/PAAleksei/Second-project.git
