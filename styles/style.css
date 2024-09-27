@@ -51,7 +51,7 @@ ol {
 }
 
 .content {
-  width: 1140px;
+  inline-size: 1140px;
   display: flex;
   align-items: end;
   gap: 30px;
@@ -70,28 +70,34 @@ ol {
   color: #545050;
 }
 
-.content__card-link {
-  text-decoration: none;
-  color: #fff;
-}
-
 .content__video-card-title {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   line-height: 30px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 200px;
 }
 
 .content__video-card-description {
   line-height: 16.2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 200px;
 }
 
 .content__list {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  height: 298px;
-  overflow-y: scroll;
+  block-size: 298px;
+  overflow-y: auto;
+}
+
+.content__list-item:not(:last-of-type) {
+  margin-bottom: 30px;
 }
 
 .result {
@@ -100,13 +106,15 @@ ol {
 
 .result__video-container {
   position: relative;
-  width: 100%;
-  margin-bottom: 16px;
+  inline-size: 711px;
+  block-size: 385px;
+  margin-bottom: 13px;
 }
 
 .result__video {
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
   cursor: pointer;
 }
 
@@ -114,8 +122,8 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 26px;
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 .content__video-card {
@@ -124,9 +132,11 @@ ol {
 }
 
 .content__video-card-thumbnail {
-  width: 194px;
-  height: 103px;
+  inline-size: 194px;
+  block-size: 103px;
   flex-grow: 0;
+  object-fit: cover;
+  object-position: center;
 }
 
 .content__video-card-description-container {
@@ -141,13 +151,15 @@ ol {
 
 .search-form__fieldset {
   border: none;
-  width: 225px;
+  inline-size: 225px;
+  padding: 3px 12px 2px 0;
 }
 
 .search-form__label {
   display: flex;
   justify-content: space-between;
-  width: fit-content;
+  align-items: center;
+  inline-size: fit-content;
   gap: 5px;
 }
 
@@ -163,52 +175,58 @@ ol {
 }
 
 .search-form__textfield {
-  font-family: 'Fira Sans Condensed', sans-serif;;
-  color: #fff;
-  opacity: 70%;
+  font-family: inherit;
   font-weight: 400;
   font-size: 18px;
+  color: #fff;
   line-height: 21.6px;
   background-color: transparent;
-  width: 225px;
+  inline-size: 225px;
   border: 1px solid #FFF;
   border-left: none;
   border-right: none;
 }
 
+::placeholder {
+  color: #fff;
+  opacity: 70%;
+}
+
 .search-form__checkbox-list {
   display: flex;
   justify-content: space-between;
-  width: 212px;
+  inline-size: 212px;
+  block-size: 26px;
+  padding-block-end: 3px
 }
 
 .search-form__pseudo-checkbox {
   position: relative;
   cursor: pointer;
   border: 1px solid #FFF;
-  width: 19px;
-  height: 19px;
+  inline-size: 19px;
+  block-size: 19px;
 }
 
 .button {
   cursor: pointer;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: inherit;
   font-weight: 700;
   font-size: 18px;
   text-align: center;
   color: #FFF;
   background-color: transparent;
-  border: 1px solid #FFF;
+  border: 1px solid currentColor;
 }
 
 .search-form__submit-button {
-  width: 194px;
-  height: 34px;
+  inline-size: 194px;
+  block-size: 34px;
 }
 
 .more-button {
-  width: 100%;
-  height: 34px;
+  inline-size: 100%;
+  block-size: 34px;
 }
 
 .search-form__textfield:focus {
@@ -223,8 +241,8 @@ ol {
 .search-form__checkbox[type='checkbox']:checked + .search-form__pseudo-checkbox::before {
   content: '';
   display: block;
-  width: 15px;
-  height: 15px;
+  inline-size: 15px;
+  block-size: 15px;
   background-color: #FFF;
   margin: 1px;
 }
@@ -234,7 +252,7 @@ ol {
   outline-offset: 1px;
 }
 
-.search-form__label:hover {
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline;
 }
 
@@ -258,6 +276,8 @@ ol {
 .content__card-link {
   display: block;
   margin: 2px;
+  text-decoration: none;
+  color: #fff;
 }
 
 .content__card-link_current {
