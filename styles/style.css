@@ -9,12 +9,9 @@ html {
 }
 
 .page {
-<<<<<<< HEAD
   display: flex;
   justify-content: center;
   align-items: center;
-=======
->>>>>>> 506f25a6d049c9e35788e226d3ff90ad07c70ade
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -42,7 +39,6 @@ ul,
 ol {
   list-style: none;
 }
-<<<<<<< HEAD
 
 .visually-hidden {
   position: absolute;
@@ -284,5 +280,3 @@ ol {
   outline: 1px solid #FFF;
   outline-offset: 1px;
 }
-=======
->>>>>>> 506f25a6d049c9e35788e226d3ff90ad07c70ade
